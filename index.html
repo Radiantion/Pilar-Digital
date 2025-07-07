@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilares de um universo digital</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #d8dde7;
+      color: #3e4247;
+      padding-top: 70px;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3, h5 {
+      color: #252525;
+    }
+
+    p {
+      color: #363636;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* Botão hambúrguer */
+    .hamburguer {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+      font-size: 150%;
+      background-color: #303238cc;
+      border-radius: 5px;
+      color: rgba(255, 255, 255, 0.651);
+      height: 25px;
+      width: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 15px;
+    }
+
+    .hamburguer:hover {
+      background-color: #1d1e22cc;
+    }
+
+    .nav-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 20px;
+      background-color: #020202d0;
+      border-radius: 8px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .nav-menu.open {
+      display: block;
+    }
+
+    .nav-menu ul {
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin: 10px 0;
+    }
+
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: #00aaff;
+    }
+
+    /* Botões */
+    button {
+      margin: 10px 8px;
+      background-color: #3772f1;
+      border-radius: 5px;
+      border: none;
+      padding: 12px 24px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #264fd6;
+      transform: scale(1.05);
+    }
+
+    button a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Último botão em destaque */
+    .btn-feedback {
+      background-color: #0a1930;
+      padding: 14px 32px;
+      font-size: 16px;
+    }
+
+    .btn-feedback:hover {
+      background-color: #071224;
+      transform: scale(1.07);
+    }
+  </style>
+</head>
+<body>
+
+  <button id="menu-toggle" class="hamburguer" aria-label="Abrir Menu">☰</button>
+
+  <nav id="menu" class="nav-menu">
+    <ul>
+      <li><a href="#introducao">Sobre a Eletiva</a></li>
+      <li><a href="#html">HTML</a></li>
+      <li><a href="#css">CSS</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1 id="introducao">Criando um Mundo na Internet</h1>
+    <p>
+      A eletiva de Desenvolvimento Web tem como objetivo ensinar os alunos a criarem sites
+      simples, entendendo como funcionam as páginas da internet. Durante as aulas, aprendemos
+      os conceitos básicos de construção de sites usando HTML e CSS, desenvolvendo projetos
+      práticos para aplicar o que foi aprendido.
+    </p>
+
+    <h2>Apenas o básico</h2>
+    <h3 id="html">O que é HTML</h3>
+    <p>
+      O HTML é a base de todo site. Ele serve para organizar e estruturar os conteúdos, como
+      textos, imagens, links e listas. Com ele, conseguimos montar o esqueleto da página e
+      definir o que vai aparecer na tela.
+    </p>
+
+    <h3 id="css">O que é CSS</h3>
+    <p>
+      O CSS é usado para deixar o site bonito e com estilo. Ele permite mudar as cores, fontes,
+      tamanhos, posicionamentos e criar layouts mais agradáveis. É como se fosse a "roupa" do
+      site, deixando tudo mais visual e organizado.
+    </p>
+
+    <h3 id="projetos">Portfólio</h3>
+    <button><a href="Eletiva definitiva.html">Portal Eletiva - Lucas</a></button>
+    <button><a href="http://radiantion.github.io/catalogo-indie/">Cardápio Indie - Rodrigo e Sophia</a></button>
+    <button><a href="#">Projeto Geral</a></button>
+    <br><br>
+    <button class="btn-feedback"><a href="feedback.html" id="feedback">Deixe seu feedback aqui</a></button>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    // Fecha o menu ao clicar em um link
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("open");
+      });
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener("click", function (event) {
+      if (menu.classList.contains("open") &&
+          !menu.contains(event.target) &&
+          !toggle.contains(event.target)) {
+        menu.classList.remove("open");
+      }
+    });
+  </script>
+
+</body>
+</html>

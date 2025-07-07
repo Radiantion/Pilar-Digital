@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    form h2{
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 50%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .mensagem-sucesso {
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="https://formspree.io/f/xqabnypw" method="POST">
+    <h2>Envie seu Feedback</h2>
+    
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" required>
+
+    <label for="nome">Turma:</label>
+    <input type="text" name="turma" id="turma" required>
+
+    <label for="nome">Eletiva:</label>
+    <input type="text" name="eletiva " id="eletiva" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea name="mensagem" id="mensagem" rows="5" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+</html>
