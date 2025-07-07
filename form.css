@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Revalia&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Revalia", sans-serif;
+}
+body{
+    background:#17202a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background: #6c3483 ;
+    padding: 30px;    
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.container{
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px 25px 25px 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+h1 {
+    color: #6c3483;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 1rem;
+    margin-top: 18px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f8f8f8;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus, select:focus {
+    border: 1.5px solid #6c3483;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #6c3483;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #512e5f;
+}
+
+#mensagem {
+    font-size: 1.1rem;
+    color: #229954;
+    background: #eafaf1;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px 5px 15px 5px;
+    }
+    h1 {
+        font-size: 1.3rem;
+    }
+    header {
+        font-size: 1.1rem;
+        padding: 18px;
+    }
+}
